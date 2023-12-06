@@ -50,7 +50,7 @@ numberQueue.enqueue(10);
 
 // Remove elements from the queue
 const poppedElement = numberQueue.dequeue();
-console.log(poppedElement); // Output: 10
+console.log(poppedElement); // Output: 42 
 
 // Check queue size
 const size = numberQueue.length;
