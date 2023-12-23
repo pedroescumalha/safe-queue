@@ -1,5 +1,5 @@
 {
-  "name": "safe-queue",
+  "name": "typesafe-queue",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Typesafe queue data structure",
@@ -57,6 +57,5 @@
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {}
+  }
 }
