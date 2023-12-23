@@ -1,8 +1,28 @@
 {
   "name": "safe-stack",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
+  "description": "Typesafe queue data structure",
+  "author": "Pedro Escumalha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedroescumalha/safe-queue.git"
+  },
+  "types": "./dist/safeQueue.d.ts",
+  "main": "./dist/safeQueue.js",
+  "module": "./dist/safeQueue.mjs",
+  "homepage": "https://github.com/pedroescumalha/safe-queue",
+  "bugs": "https://github.com/pedroescumalha/safe-queue/issues",
+  "keywords": [
+    "queue",
+    "typescript",
+    "typesafe",
+    "dataStructure",
+    "data_structure",
+    "data-structure",
+    "type",
+    "safety"
+  ],
   "devDependencies": {
     "@types/node": "^20.10.5",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
@@ -12,14 +32,31 @@
     "globstar": "^1.0.0",
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "tsup": "^8.0.1"
   },
   "scripts": {
-    "start": "node dist/index.js",
-    "build": "tsc",
+    "build": "rm -rf dist/* && tsup src/*.ts --format esm,cjs --dts --sourcemap -d=./dist && rm -rf dist/*.test.*",
     "dev": "nodemon --watch 'src/**' --ext 'ts,json' --ignore 'src/**/*.spec.ts' --ignore 'src/**/*.test.ts' --exec 'ts-node src/index.ts'",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "globstar -- node --test --require ts-node/register ./src/**/*.test.ts"
-  }
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/safeQueue.js",
+      "import": "./dist/safeQueue.mjs",
+      "types": "./dist/safeQueue.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {}
 }
