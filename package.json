@@ -1,5 +1,5 @@
 {
-  "name": "safe-stack",
+  "name": "safe-queue",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Typesafe queue data structure",
