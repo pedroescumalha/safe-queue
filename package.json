@@ -33,7 +33,7 @@
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
-    "tsup": "^8.0.1"
+    "tsup": "^8.2.4"
   },
   "scripts": {
     "build": "rm -rf dist/* && tsup src/*.ts --format esm,cjs --dts --sourcemap -d=./dist && rm -rf dist/*.test.*",
